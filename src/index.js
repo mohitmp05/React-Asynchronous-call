@@ -1,17 +1,23 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import React from "react";
+import ReactDOM from "react-dom";
+import PostForm from "./postform";
+import PutForm from "./putform";
+import DeleteForm from "./deleteform";
+import GetList from "./getlist";
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
-);
+class App extends React.Component {
+  render() {
+    return (
+      <div>
+        {/* <GetList /> */}
+        <h1>Post Form</h1>
+        <PostForm />
+        {/* <PutForm/> */}
+        <h1>Delete Form</h1>
+        <DeleteForm/>
+      </div>
+    );
+  }
+}
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+ReactDOM.render(<App />, document.querySelector("#root"));
